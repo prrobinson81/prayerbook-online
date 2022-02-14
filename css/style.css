@@ -17,8 +17,14 @@ main {
 
 nav {
     display: flex;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem 0rem;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
+    position: fixed;
+    background-color: white;
 }
 
 ul {
@@ -40,6 +46,10 @@ p {
 
 blockquote {
     margin-left: 7rem;
+}
+
+.container {
+    margin-top: 3rem;
 }
 
 .direction { 
