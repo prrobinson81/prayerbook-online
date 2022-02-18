@@ -38,7 +38,7 @@ nav {
 }
 
 img.logo {
-    height: 2rem;
+    height: 4rem;
     display: inline;
 }
 
@@ -68,7 +68,7 @@ img.logo {
 
 .topnav a.active {
     background-color: #ffe761;
-    /* color: white; */
+    color: black;
 }
 
 .topnav .icon {
