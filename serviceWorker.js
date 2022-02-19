@@ -4,7 +4,7 @@ const assets = [
     "/index.html",
     "/css/style.css",
     "js/app.js",
-    "images/EucharistElements.svg",
+    "images/EucharistElementsHeader.svg",
     "services/The-Lords-Supper-or-Holy-Communion.html",
 ]
 
