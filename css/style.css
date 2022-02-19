@@ -67,7 +67,7 @@ img.logo {
 }
 
 .topnav a.active {
-    background-color: #ffe761;
+    background-color: #FCCB00;
     color: #333;
 }
 
@@ -106,7 +106,7 @@ div.hamburger {
 }
 
 .container {
-    margin-top: 5rem;
+    margin-top: 7rem;
     padding: 0.5rem;
 }
 

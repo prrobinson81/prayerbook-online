@@ -3,9 +3,9 @@ const assets = [
     "/",
     "/index.html",
     "/css/style.css",
-    "js/app.js",
-    "images/EucharistElementsHeader.svg",
-    "services/The-Lords-Supper-or-Holy-Communion.html",
+    "/js/app.js",
+    "/images/EucharistElementsHeader.svg",
+    "/services/The-Lords-Supper-or-Holy-Communion.html",
 ]
 
 self.addEventListener("install", installEvent => {
