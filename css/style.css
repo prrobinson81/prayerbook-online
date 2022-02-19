@@ -17,6 +17,7 @@ main {
 
 h1 {
     margin-bottom: 0.5rem;
+    display: inline;
 }
 
 p {
