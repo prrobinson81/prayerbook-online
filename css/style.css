@@ -1,7 +1,37 @@
+@media (prefers-color-scheme: light) {
+    * {
+        --bg: #fdfdfd;
+        --fg: black;
+        --navbg: #333;
+        --nava: #f2f2f2;
+        --navahoverbg: #ddd;
+        --navahover: black;
+        --highlight: #FCCB00;
+        --hamburgerbg: #f2f2f2;
+        --dir: red;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        --bg: #333;
+        --fg: #ddd;
+        --navbg: #111;
+        --nava: #999;
+        --navahoverbg: #555;
+        --navahover: black;
+        --highlight: #FCCB00;
+        --hamburgerbg: #999;
+        --dir: #bb4444;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--fg);
+    background-color: var(--bg);
 }
 
 body {
@@ -12,7 +42,7 @@ body {
 main {
     max-width: 900px;
     margin: auto;
-    background-color: #fdfdfd;
+    background-color: var(--bg);
 }
 
 h1 {
@@ -34,41 +64,42 @@ nav {
     width: 100%;
     padding: 0.5rem;
     overflow: hidden;
-    background-color: #fdfdfd;
+    background-color: var(--bg);
     position: fixed;
 }
 
-img.logo {
+.logo {
     height: 4rem;
 }
 
 .topnav {
-    background-color: #333;
+    background-color: var(--navbg);
     overflow: hidden;
 }
 
 .topnav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: var(--nava);
     text-align: center;
     padding: 0.5rem 0.75rem;
     text-decoration: none;
     font-size: 1rem;
+    background-color: var(--navbg);
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: var(--navahoverbg);
+    color: var(--navahover);
 }
 
 .topnav a:hover div.hamburger {
-    background-color: black;
+    background-color: var(--navahover);
 }
 
 .topnav a.active {
-    background-color: #FCCB00;
-    color: #333;
+    background-color: var(--highlight);
+    color: var(--navbg);
 }
 
 .topnav .icon {
@@ -101,7 +132,7 @@ img.logo {
 div.hamburger {
     width: 16px;
     height: 2px;
-    background-color: #f2f2f2;
+    background-color: var(--hamburgerbg);
     margin: 3px 0;
 }
 
@@ -112,7 +143,7 @@ div.hamburger {
 
 .direction { 
     font-style: italic;
-    color: red;
+    color: var(--dir);
 }
 
 .instr {
