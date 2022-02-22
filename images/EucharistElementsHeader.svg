@@ -1,6 +1,8 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2750 500">
     <defs>
         <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+            
             .cls-1 {
                 fill:none;
             }
@@ -37,7 +39,7 @@
             }
 
             .cls-7 {
-                font-size:250px;font-family:BradleyHandITCTT-Bold, Bradley Hand;font-weight:700;
+                font-size:250px;font-family: 'Caveat Brush', cursive;font-weight:700;
             }
         </style>
         <clipPath id="clip-path">
