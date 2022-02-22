@@ -1,7 +1,7 @@
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2750 500">
     <defs>
         <style type="text/css">
-@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Shalimar&amp;display=swap');
             
             .cls-1 {
                 fill:none;
@@ -39,7 +39,7 @@
             }
 
             .cls-7 {
-                font-size:250px;font-family: 'Caveat Brush', cursive;font-weight:700;
+                font-size:350px;font-family: 'Shalimar', cursive;font-weight:600;
             }
         </style>
         <clipPath id="clip-path">
@@ -555,5 +555,5 @@
     <path class="cls-3" d="M282.3,394.34l2.1-.69C284,393.5,281.54,394.08,282.3,394.34Z"/>
     <path class="cls-3" d="M288.93,408.36c-1,.52-1.5,1.16-.39,1.05C288.57,409,289.26,408.43,288.93,408.36Z"/>
     <polygon class="cls-3" points="307.89 451.23 307.11 451.43 307.97 451.54 307.89 451.23"/>
-    <text class="cls-7" transform="translate(500 297.87)">Prayer Book.online</text>
+    <text class="cls-7" transform="translate(500 297.87)">PrayerBook.online</text>
 </svg>
