@@ -12,6 +12,20 @@
         
         <script src="js/app.js" type="text/javascript"></script>
 
+        <script type="text/javascript">
+            if(navigator.serviceWorker) {
+                navigator.serviceWorker.register('/prayerbook-online/serviceWorker.js', {scope: './prayerbook-online/'})
+                .then(
+                    function (registration) {
+                        console.log('Service worker registered!');
+                    },
+                    function (err) {
+                        console.error('Installation failed!', err);
+                    }
+                );
+            }
+        </script>
+
         <!-- ios support -->
         <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
         <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
