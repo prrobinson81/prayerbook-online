@@ -13,8 +13,8 @@
         <script src="js/app.js" type="text/javascript"></script>
 
         <script type="text/javascript">
-            if(navigator.serviceWorker) {
-                navigator.serviceWorker.register('/prayerbook-online/serviceWorker.js', {scope: './prayerbook-online/'})
+            if("serviceWorker" in navigator) {
+                navigator.serviceWorker.register('/prayerbook-online/serviceWorker.js')
                 .then(
                     function (registration) {
                         console.log('Service worker registered!');
