@@ -1,0 +1,642 @@
+[
+    {
+        "id": "Circumcision",
+        "name": "The Circumcision Of Christ",
+        "dateType": "fixed",
+        "month": 1,
+        "day": 1
+    },
+    {
+        "id": "Circumcision1",
+        "name": "The Circumcision Of Christ",
+        "dateType": "moveable",
+        "anchorFeast": "Circumcision",
+        "relationship": "SundayNext"
+    },
+    {
+        "id": "Epiphany",
+        "name": "The Epiphany",
+        "dateType": "fixed",
+        "month": 1,
+        "day": 6
+    },
+    {
+        "id": "Epiphany1",
+        "name": "The First Sunday After The Epiphany",
+        "dateType": "moveable",
+        "anchorFeast": "Epiphany",
+        "relationship": "SundayNext"
+    },
+    {
+        "id": "Epiphany2",
+        "name": "The Second Sunday After The Epiphany",
+        "dateType": "moveable",
+        "anchorFeast": "Epiphany1",
+        "dateDiff": 7
+    },
+    {
+        "id": "Epiphany3",
+        "name": "The Third Sunday After The Epiphany",
+        "dateType": "moveable",
+        "anchorFeast": "Epiphany1",
+        "dateDiff": 14
+    },
+    {
+        "id": "Epiphany4",
+        "name": "The Forth Sunday After The Epiphany",
+        "dateType": "moveable",
+        "anchorFeast": "Epiphany1",
+        "dateDiff": 21
+    },
+    {
+        "id": "Epiphany5",
+        "name": "The Fifth Sunday After The Epiphany",
+        "dateType": "moveable",
+        "anchorFeast": "Epiphany1",
+        "dateDiff": 28
+    },
+    {
+        "id": "Epiphany6",
+        "name": "The Sixth Sunday After The Epiphany",
+        "dateType": "moveable",
+        "anchorFeast": "Epiphany1",
+        "dateDiff": 35
+    },
+    {
+        "id": "Septuagesima",
+        "name": "The Sunday Called Septuagesima",
+        "altname": "The Third Sunday Before Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -63
+    },
+    {
+        "id": "Sexagesima",
+        "name": "The Sunday Called Sexagesima",
+        "altname": "The Second Sunday Before Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -56
+    },
+    {
+        "id": "Quinguagesima",
+        "name": "The Sunday Called Quinguagesima",
+        "altname": "The Next Sunday Before Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -49
+    },
+    {
+        "id": "AshWednesday",
+        "name": "Ash Wednesday",
+        "altname": "The First Day Of Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -46
+    },
+    {
+        "id": "Lent1",
+        "name": "The First Sunday In Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -42
+    },
+    {
+        "id": "Lent2",
+        "name": "The Second Sunday In Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -35
+    },
+    {
+        "id": "Lent3",
+        "name": "The Third Sunday In Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -28
+    },
+    {
+        "id": "Lent4",
+        "name": "The Fourth Sunday In Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -21
+    },
+    {
+        "id": "Lent5",
+        "name": "The Fifth Sunday In Lent",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -14
+    },
+    {
+        "id": "PalmSunday",
+        "name": "The Sunday Next Before Easter",
+        "altname": "Palm Sunday",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -7
+    },
+    {
+        "id": "HolyWeek1",
+        "name": "Monday Before Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -6
+    },
+    {
+        "id": "HolyWeek2",
+        "name": "Tuesday Before Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -5
+    },
+    {
+        "id": "HolyWeek3",
+        "name": "Wednesday Before Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -4
+    },
+    {
+        "id": "MaundyThursday",
+        "name": "Thursday Before Easter",
+        "altname": "Maundy Thursday",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -3
+    },
+    {
+        "id": "GoodFriday",
+        "name": "Good Friday",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -2
+    },
+    {
+        "id": "EasterSaturday",
+        "name": "Easter Even",
+        "altname": "Easter Saturday",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": -1
+    },
+    {
+        "id": "EasterSunday",
+        "name": "Easter Day",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 0
+    },
+    {
+        "id": "EasterWeek1",
+        "name": "Monday In Easter Week",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 1
+    },
+    {
+        "id": "EasterWeek2",
+        "name": "Tuesday In Easter Week",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 2
+    },
+    {
+        "id": "Easter1",
+        "name": "The First Sunday After Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 7
+    },
+    {
+        "id": "Easter2",
+        "name": "The Second Sunday After Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 14
+    },
+    {
+        "id": "Easter3",
+        "name": "The Third Sunday After Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 21
+    },
+    {
+        "id": "Easter4",
+        "name": "The Fourth Sunday After Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 28
+    },
+    {
+        "id": "Easter5",
+        "name": "The Fifth Sunday After Easter",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 35
+    },
+    {
+        "id": "AscensionDay",
+        "name": "The Ascension Day",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 39
+    },
+    {
+        "id": "Ascension1",
+        "name": "The Sunday After Ascension Day",
+        "dateType": "moveable",
+        "anchorFeast": "AscensionDay",
+        "relationship": "SundayNext"
+    },
+    {
+        "id": "Whitsunday",
+        "name": "Whit Sunday",
+        "altname": "Pentecost",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 49
+    },
+    {
+        "id": "WhitsunWeek1",
+        "name": "Monday In Whitsun Week",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 50
+    },
+    {
+        "id": "WhitsunWeek2",
+        "name": "Tuesday In Whitsun Week",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 51
+    },
+    {
+        "id": "TrinitySunday",
+        "name": "Trinity Sunday",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 56
+    },
+    {
+        "id": "Trinity1",
+        "name": "The First Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 63
+    },
+    {
+        "id": "Trinity2",
+        "name": "The Second Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 70
+    },
+    {
+        "id": "Trinity3",
+        "name": "The Third Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 77
+    },
+    {
+        "id": "Trinity4",
+        "name": "The Fourth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 84
+    },
+    {
+        "id": "Trinity5",
+        "name": "The Fifth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 91
+    },
+    {
+        "id": "Trinity6",
+        "name": "The Sixth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 98
+    },
+    {
+        "id": "Trinity7",
+        "name": "The Seventh Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 105
+    },
+    {
+        "id": "Trinity8",
+        "name": "The Eigth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 112
+    },
+    {
+        "id": "Trinity9",
+        "name": "The Ninth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 119
+    },
+    {
+        "id": "Trinity10",
+        "name": "The Tenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 126
+    },
+    {
+        "id": "Trinity11",
+        "name": "The Eleventh Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 133
+    },
+    {
+        "id": "Trinity12",
+        "name": "The Twelfth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 140
+    },
+    {
+        "id": "Trinity13",
+        "name": "The Thirteenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 147
+    },
+    {
+        "id": "Trinity14",
+        "name": "The Fourteenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 154
+    },
+    {
+        "id": "Trinity15",
+        "name": "The Fifteenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 161
+    },
+    {
+        "id": "Trinity16",
+        "name": "The Sixteenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 168
+    },
+    {
+        "id": "Trinity17",
+        "name": "The Seventeenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 175
+    },
+    {
+        "id": "Trinity18",
+        "name": "The Eighteenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 182
+    },
+    {
+        "id": "Trinity19",
+        "name": "The Nineteenth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 189
+    },
+    {
+        "id": "Trinity20",
+        "name": "The Twentieth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 196
+    },
+    {
+        "id": "Trinity21",
+        "name": "The Twenty-First Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 203
+    },
+    {
+        "id": "Trinity22",
+        "name": "The Twenty-Second Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 210
+    },
+    {
+        "id": "Trinity23",
+        "name": "The Twenty-Third Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 217
+    },
+    {
+        "id": "Trinity24",
+        "name": "The Twenty-Fourth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 224
+    },
+    {
+        "id": "Trinity25",
+        "name": "The Twenty-Fifth Sunday After Trinity",
+        "dateType": "moveable",
+        "anchorFeast": "EasterSunday",
+        "dateDiff": 231
+    },
+    {
+        "id": "Advent1",
+        "name": "The First Sunday In Advent",
+        "dateType": "moveable",
+        "anchorFeast": "Advent4",
+        "dateDiff": -21
+    },
+    {
+        "id": "Advent2",
+        "name": "The Second Sunday In Advent",
+        "dateType": "moveable",
+        "anchorFeast": "Advent4",
+        "dateDiff": -14
+    },
+    {
+        "id": "Advent3",
+        "name": "The Third Sunday In Advent",
+        "dateType": "moveable",
+        "anchorFeast": "Advent4",
+        "dateDiff": -7
+    },
+    {
+        "id": "Advent4",
+        "name": "The Fourth Sunday In Advent",
+        "dateType": "moveable",
+        "anchorFeast": "ChristmasDay",
+        "relationship": "SundayBefore"
+    },
+    {
+        "id": "ChristmasDay",
+        "name": "Christmas Day",
+        "altname": "The Nativity Of Our Lord, OR The Birth-Day Of Christ",
+        "dateType": "fixed",
+        "month": 12,
+        "day": 25
+    },
+    {
+        "id": "StStephen",
+        "name": "Saint Stephen's Day",
+        "dateType": "fixed",
+        "month": 12,
+        "day": 26
+    },
+    {
+        "id": "Christmas1",
+        "name": "The Sunday After Christmas",
+        "dateType": "moveable",
+        "anchorFeast": "ChristmasDay",
+        "relationship": "SundayNext"
+    },
+    {
+        "id": "StJohnTheEvagelist",
+        "name": "Saint John The Evangelist's Day",
+        "dateType": "fixed",
+        "month": 12,
+        "day": 27
+    },
+    {
+        "id": "InnocentsDay",
+        "name": "The Innocents' Day",
+        "dateType": "fixed",
+        "month": 12,
+        "day": 28
+    },
+    {
+        "id": "StAndrew",
+        "name": "Saint Andrew's Day",
+        "dateType": "fixed",
+        "month": 11,
+        "day": 30
+    },
+    {
+        "id": "StThomas",
+        "name": "Saint Thomas The Apostle",
+        "dateType": "fixed",
+        "month": 12,
+        "day": 21
+    },
+    {
+        "id": "StPaul",
+        "name": "The Conversion Of Saint Paul",
+        "dateType": "fixed",
+        "month": 1,
+        "day": 25
+    },
+    {
+        "id": "Presentation",
+        "name": "The Presentation Of Christ In The Temple",
+        "altname": "The Purification Of Saint Mary The Virgin",
+        "dateType": "fixed",
+        "month": 2,
+        "day": 2
+    },
+    {
+        "id": "StMatthias",
+        "name": "Saint Matthias's Day",
+        "dateType": "fixed",
+        "month": 2,
+        "day": 24
+    },
+    {
+        "id": "Annunciation",
+        "name": "The Annunciation Of the Blessed Virgin Mary",
+        "dateType": "fixed",
+        "month": 3,
+        "day": 25
+    },
+    {
+        "id": "StMark",
+        "name": "Saint Mark's Day",
+        "dateType": "fixed",
+        "month": 4,
+        "day": 25
+    },
+    {
+        "id": "StPhilipAndStJames",
+        "name": "Saint Philip And Saint James's Day",
+        "dateType": "fixed",
+        "month": 5,
+        "day": 1
+    },
+    {
+        "id": "StJohnTheBaptist",
+        "name": "Saint John Baptist's Day",
+        "dateType": "fixed",
+        "month": 6,
+        "day": 24
+    },
+    {
+        "id": "StPeter",
+        "name": "Saint Peter's Day",
+        "dateType": "fixed",
+        "month": 6,
+        "day": 29
+    },
+    {
+        "id": "StJames",
+        "name": "Saint James The Apostle",
+        "dateType": "fixed",
+        "month": 7,
+        "day": 25
+    },
+    {
+        "id": "StBartholomew",
+        "name": "Saint Bartholomew The Apostle",
+        "dateType": "fixed",
+        "month": 8,
+        "day": 24
+    },
+    {
+        "id": "StMatthew",
+        "name": "Saint Matthew The Apostle",
+        "dateType": "fixed",
+        "month": 9,
+        "day": 21
+    },
+    {
+        "id": "StMichael",
+        "name": "Saint Michael And All Angels",
+        "dateType": "fixed",
+        "month": 9,
+        "day": 29
+    },
+    {
+        "id": "StLuke",
+        "name": "Saint Luke The Evangelist",
+        "dateType": "fixed",
+        "month": 10,
+        "day": 18
+    },
+    {
+        "id": "StSimonAndStJude",
+        "name": "Saint Simon And Saint Jude, Apostles",
+        "dateType": "fixed",
+        "month": 10,
+        "day": 28
+    },
+    {
+        "id": "AllSaintsDay",
+        "name": "All Saints' Day",
+        "dateType": "fixed",
+        "month": 11,
+        "day": 1
+    }
+]
