@@ -110,6 +110,21 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    background-color: var(--navahoverbg);
+    padding: 0.25rem;
+}
+
+.nav a {
+    background-color: var(--navahoverbg);
+    text-decoration: none;
+    padding: 0rem 0.5rem;
+}
+
+.nav a:hover {
+    background-color: var(--nava);
 }
 
 @media screen and (max-width: 600px) {
