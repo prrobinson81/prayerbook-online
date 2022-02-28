@@ -7,13 +7,6 @@
         "day": 1
     },
     {
-        "id": "Circumcision1",
-        "name": "The Circumcision Of Christ",
-        "dateType": "moveable",
-        "anchorFeast": "Circumcision",
-        "relationship": "SundayNext"
-    },
-    {
         "id": "Epiphany",
         "name": "The Epiphany",
         "dateType": "fixed",

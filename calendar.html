@@ -13,6 +13,44 @@
         <script src="js/app.js" type="text/javascript"></script>
         <script src="js/computus.js" type="text/javascript"></script>
 
+        <script type="text/javascript">
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+
+            let year = (new Date()).getFullYear();
+
+            if(urlParams.has("year")) {
+                 year = urlParams.get("year");
+            }
+
+            fetch("./js/dates.json")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                let output = "<table><thead><tr><th>Name</th><th>Date</th></tr></thead><tbody>";
+                for (let i in result) {
+                    
+                    var feastDate = GetFeastDate(result, result[i], year);
+
+                    output += "<tr><td>" + result[i].name;
+                    if (result[i].altname) {
+                        output += " <span class=\"small\">(" + result[i].altname + ")</span>";
+                    }
+                    output += "</td><td>" + 
+                            feastDate.toDateString() + 
+                            "</td></tr>";
+                }
+                output += "</tbody></table>";
+                document.querySelector("#calendar").innerHTML = output;
+            });
+
+            onload = function() {
+                document.getElementById("lastYear").setAttribute("href", "./calendar.html?year=" + (parseInt(year) - 1));
+                document.getElementById("nextYear").setAttribute("href", "./calendar.html?year=" + (parseInt(year) + 1));
+            }
+        </script>
+
         <!-- ios support -->
         <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
         <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
@@ -42,30 +80,9 @@
                     </a>
                 </div>
             </nav>
-            <div class="container" id="container">
-                <script type="text/javascript">
-                    fetch("./js/dates.json")
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(result) {
-                        let output = "<table><thead><tr><th>Name</th><th>Date</th></tr></thead><tbody>";
-                        for (let i in result) {
-                            
-                            var feastDate = GetFeastDate(result, result[i], 2022);
-
-                            output += "<tr><td>" + result[i].name;
-                            if (result[i].altname) {
-                                output += " <span class=\"small\">(" + result[i].altname + ")</span>";
-                            }
-                            output += "</td><td>" + 
-                                    feastDate.toDateString() + 
-                                    "</td></tr>";
-                        }
-                        output += "</tbody></table>";
-                        document.querySelector("#container").innerHTML = output;
-                    });
-                </script>
+            <div class="container">
+                <div class="nav"><a href="." id="lastYear">&lt;</a> <script>document.write(year);</script> <a href="." id="nextYear">&gt;</a></div>
+                <div id="calendar"></div>
             </div>
         </main>
     </body>
