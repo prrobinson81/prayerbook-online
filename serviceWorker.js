@@ -56,9 +56,9 @@ self.onfetch = function(event) {
             return caches.open(staticPrayerBookOnline).then(function(cache) {
                 cache.put(event.request, response.clone());
                 return response;
-            }).catch(() => {
-                    return caches.match(event.request);
             })
-        })
+        }).catch(() => {
+            return caches.match(event.request, { ignoreSearch: true });
+    })
     );
 }
