@@ -79,3 +79,21 @@ function GetFeastDate(calendar, feast, year) {
             return null;
     }
 }
+
+function GetAllSundays(year) {
+    return fetch("./js/dates.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(result) {
+        for (let i in result) {                   
+            result[i].Date = GetFeastDate(result, result[i], year);
+        }
+
+        result.sort(function(a, b) {
+            return a.Date - b.Date;
+        });
+
+        return result;
+    });
+}
