@@ -24,6 +24,10 @@
         --hamburgerbg: #999;
         --dir: #bb4444;
     }
+
+    strong {
+        color: white;
+    }
 }
 
 * {
