@@ -81,19 +81,52 @@ function GetFeastDate(calendar, feast, year) {
 }
 
 function GetAllSundays(year) {
-    return fetch("./js/dates.json")
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(result) {
-        for (let i in result) {                   
-            result[i].Date = GetFeastDate(result, result[i], year);
-        }
+    var basePath;
 
-        result.sort(function(a, b) {
-            return a.Date - b.Date;
+    switch(window.location.hostname){
+        case "localhost": 
+            basePath = window.location.origin;
+            break;
+        case "prrobinson81.github.io":
+            basePath = window.location.origin + "/prayerbook-online";
+            break;
+        default:
+            basePath = "./";
+    }
+
+    return fetch(basePath + "/js/dates.json")
+        .then(function(response) {
+                return response.json();
+            })
+        .then(function(result) {
+            for (let i in result) {                   
+                result[i].Date = GetFeastDate(result, result[i], year);
+            }
+
+            result.sort(function(a, b) {
+                return a.Date - b.Date;
+            });
+
+            return result;
         });
+}
 
-        return result;
-    });
+function GetTodaysService() {
+    let today = new Date();
+    let year = today.getFullYear();
+
+    return GetAllSundays(year)
+        .then(function(result) {
+
+            let lastSunday = new Date();
+            today = today.toDateString();
+            lastSunday.setDate(lastSunday.getDate() - lastSunday.getDay());
+            lastSunday = lastSunday.toDateString();
+
+            for (let i in result) {
+                if(result[i].Date.toDateString() == today || result[i].Date.toDateString() == lastSunday) {
+                    return result[i];
+                }
+            }
+        });
 }
