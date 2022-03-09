@@ -9,6 +9,7 @@ const assets = [
     "./js/app.js",
     "./js/computus.js",
     "./js/dates.json",
+    "./js/readings.json",
     "./images/EucharistElementsHeader-noFont.svg",
     "./services/The-Lords-Supper-or-Holy-Communion.html",
 ]
