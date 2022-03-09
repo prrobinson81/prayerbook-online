@@ -17,6 +17,8 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
 
+            var serviceId;
+
             let year = (new Date()).getFullYear();
 
             if(urlParams.has("year")) {
@@ -27,54 +29,59 @@
                 document.getElementById("lastYear").setAttribute("href", "./calendar.html?year=" + (parseInt(year) - 1));
                 document.getElementById("nextYear").setAttribute("href", "./calendar.html?year=" + (parseInt(year) + 1));
 
-                GetAllSundays(year)
-                    .then(function(result) {
+                GetTodaysService()
+                    .then (function(result) {
+                        serviceId = result.id;
+                    })
+                    .then (function(result) {
 
-                    let lastSunday = new Date();
-                    let today = new Date().toDateString();
-                    lastSunday.setDate(lastSunday.getDate() - lastSunday.getDay());
-                    lastSunday = lastSunday.toDateString();
-                    console.log(lastSunday);
-                    console.log(today);
+                        GetAllSundays(year)
+                            .then(function(result) {
 
-                    let output = "<table><thead><tr><th>Name</th><th>Date</th></tr></thead><tbody>";
-                        
-                    for (let i in result) {
-                        
+                            let lastSunday = new Date();
+                            let today = new Date().toDateString();
+                            lastSunday.setDate(lastSunday.getDate() - lastSunday.getDay());
+                            lastSunday = lastSunday.toDateString();
 
-                        if(result[i].Date.toDateString() == today || result[i].Date.toDateString() == lastSunday) {
-                            output += "<tr><td><strong>";
-                        }
-                        else {
-                            output += "<tr><td>";
-                        }
-                        
-                        output += result[i].name;
 
-                        if (result[i].altname) {
-                            output += " <span class=\"small\">(" + result[i].altname + ")</span>";
-                        }
-
-                        if(result[i].Date.toDateString() == today || result[i].Date.toDateString() == lastSunday) {
-                            output += "</strong></td><td><strong>";
-                        }
-                        else {
-                            output += "</td><td>";
-                        }
-                        
-                        output += result[i].Date.toDateString();
+                            let output = "<table><thead><tr><th>Name</th><th>Date</th></tr></thead><tbody>";
                                 
-                        if(result[i].Date.toDateString() == today || result[i].Date.toDateString() == lastSunday) {
-                            output += "</strong></td></tr>";
-                        }
-                        else {
-                            output += "</td></tr>";
-                        }
-                    }
+                            for (let i in result) {
+                                
+                                if(result[i].id == serviceId) {
+                                    output += "<tr><td><strong>";
+                                }
+                                else {
+                                    output += "<tr><td>";
+                                }
+                                
+                                output += result[i].name;
 
-                    output += "</tbody></table>";
-                    document.querySelector("#calendar").innerHTML = output;
-                });
+                                if (result[i].altname) {
+                                    output += " <span class=\"small\">(" + result[i].altname + ")</span>";
+                                }
+
+                                if(result[i].id == serviceId) {
+                                    output += "</strong></td><td><strong>";
+                                }
+                                else {
+                                    output += "</td><td>";
+                                }
+                                
+                                output += result[i].Date.toDateString();
+                                        
+                                if(result[i].id == serviceId) {
+                                    output += "</strong></td></tr>";
+                                }
+                                else {
+                                    output += "</td></tr>";
+                                }
+                            }
+
+                            output += "</tbody></table>";
+                            document.querySelector("#calendar").innerHTML = output;
+                        });
+                    });
             }
         </script>
 
