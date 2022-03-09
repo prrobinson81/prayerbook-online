@@ -11,6 +11,50 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">  
     
     <script src="../js/app.js" type="text/javascript"></script>
+    <script src="../js/computus.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      var serviceId;
+
+      onload = function() {
+          GetTodaysService()
+            .then (function(result) {
+              if(urlParams.has("serviceId")) {
+                serviceId = urlParams.get("serviceId");
+              } else {
+                serviceId = result.id;
+              }
+
+              document.querySelector("#serviceTitle").innerHTML += " for " + result.name;
+
+              return fetch("../js/readings.json")
+                .then(function(response) {
+                    return response.json();
+                  })
+                .then(function(readings) {
+                    var reading = Object.values(readings).find(sunday => sunday.id === serviceId)
+
+                    console.log(reading.epistleRef);
+
+                    var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistleRef.chapter) + " Chapter of " + bookLookup[reading.epistleRef.book] + " beginning at the " + numberToReference(reading.epistleRef.firstVerse) + " Verse";
+                    var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospelRef.chapter) + " Chapter of " + bookLookup[reading.gospelRef.book] + " beginning at the " + numberToReference(reading.gospelRef.firstVerse) + " Verse";
+
+                    document.querySelector("#collect-of-the-day").innerHTML = reading.collect;
+                    document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
+
+                    document.querySelector("#epistle").innerHTML = epistleIntro + "<br><br>" + reading.epistle;
+                    document.querySelector("#epistle").classList.replace("placeholder", "liturgy");
+
+                    document.querySelector("#gospel").innerHTML = gospelIntro + "<br><br>" + reading.gospel;
+                    document.querySelector("#gospel").classList.replace("placeholder", "liturgy");
+                  });
+              });
+      }
+
+    </script>
 
     <!-- ios support -->
     <link rel="apple-touch-icon" href="../images/icons/icon-72x72.png" />
@@ -45,8 +89,8 @@
       </nav>
       <div class="container">
         <div class="centered">
-        <h1>The Order for the Administration of The Lord's Supper or Holy Communion</h1>
-      </div>
+          <h1 id="serviceTitle">The Order for the Administration of The Lord's Supper or Holy Communion</h1>
+        </div>
 
         <p class="direction">So many as intend to be partakers of the holy Communion shall signify their names to the Curate, at least some time the day before.</p>
 
@@ -123,13 +167,13 @@
         <p class="liturgy">ALMIGHTY and everlasting God, we are taught by thy holy Word, that the hearts of Kings are in thy rule and governance, and that thou dost dispose and turn them as it seemeth best to thy godly wisdom: We humbly beseech thee so to dispose and govern the heart of <em>ELIZABETH</em> thy servant, our Queen and Governor, that in all her thoughts, words, and works, she may ever seek thy honour and glory, and study to preserve thy people committed to her charge, in wealth, peace and godliness: Grant this, O merciful Father, for thy dear Son's sake, Jesus Christ our Lord. <em>Amen</em>.</p>
 
         <p class="direction">Then shall be said the Collect of the Day.</p>
-        <div id="collect-of-the-day" class="placeholder"></div>
+        <p id="collect-of-the-day" class="placeholder"></p>
         
         <p class="direction">And immediately after the Collect the Priest shall read the Epistle, saying, The Epistle [or, The portion of Scripture appointed for the Epistle] is written in the - Chapter of - beginning at the - Verse.</p>
-        <div id="epistle" class="placeholder"></div>
+        <p id="epistle" class="placeholder"></p>
         
         <p class="direction">And the Epistle ended, he shall say, Here endeth the Epistle. Then shall he read the Gospel (the people all standing up) saying, The holy Gospel is written in the - Chapter of - beginning at the - Verse.</p>
-        <div id="gospel" class="placeholder"></div>
+        <p id="gospel" class="placeholder"></p>
         
         <p class="direction">And the Gospel ended, shall be sung or said the Creed following, the people still standing as before.</p>
         
