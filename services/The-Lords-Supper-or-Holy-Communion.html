@@ -20,38 +20,42 @@
       var serviceId;
 
       onload = function() {
+        if(urlParams.has("serviceId")) {
+          serviceId = urlParams.get("serviceId");
+          GetServiceFromId(serviceId)
+            .then(function(service) {
+              SetServiceContent(service);
+            });
+        } else {
           GetTodaysService()
             .then (function(result) {
-              if(urlParams.has("serviceId")) {
-                serviceId = urlParams.get("serviceId");
-              } else {
-                serviceId = result.id;
-              }
+              SetServiceContent(result);
+            });                
+        }
+      }
 
-              document.querySelector("#serviceTitle").innerHTML += " for " + result.name;
+      function SetServiceContent(today) {
+        document.querySelector("#serviceTitle").innerHTML += " for " + today.name;
 
-              return fetch("../js/readings.json")
-                .then(function(response) {
-                    return response.json();
-                  })
-                .then(function(readings) {
-                    var reading = Object.values(readings).find(sunday => sunday.id === serviceId)
+        return fetch("../js/readings.json")
+          .then(function(response) {
+              return response.json();
+            })
+          .then(function(readings) {
+              var reading = Object.values(readings).find(sunday => sunday.id === today.id)
 
-                    console.log(reading.epistleRef);
+              var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistleRef.chapter) + " Chapter of " + bookLookup[reading.epistleRef.book] + " beginning at the " + numberToReference(reading.epistleRef.firstVerse) + " Verse";
+              var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospelRef.chapter) + " Chapter of " + bookLookup[reading.gospelRef.book] + " beginning at the " + numberToReference(reading.gospelRef.firstVerse) + " Verse";
 
-                    var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistleRef.chapter) + " Chapter of " + bookLookup[reading.epistleRef.book] + " beginning at the " + numberToReference(reading.epistleRef.firstVerse) + " Verse";
-                    var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospelRef.chapter) + " Chapter of " + bookLookup[reading.gospelRef.book] + " beginning at the " + numberToReference(reading.gospelRef.firstVerse) + " Verse";
+              document.querySelector("#collect-of-the-day").innerHTML = reading.collect;
+              document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
 
-                    document.querySelector("#collect-of-the-day").innerHTML = reading.collect;
-                    document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
+              document.querySelector("#epistle").innerHTML = epistleIntro + "<br><br>" + reading.epistle;
+              document.querySelector("#epistle").classList.replace("placeholder", "liturgy");
 
-                    document.querySelector("#epistle").innerHTML = epistleIntro + "<br><br>" + reading.epistle;
-                    document.querySelector("#epistle").classList.replace("placeholder", "liturgy");
-
-                    document.querySelector("#gospel").innerHTML = gospelIntro + "<br><br>" + reading.gospel;
-                    document.querySelector("#gospel").classList.replace("placeholder", "liturgy");
-                  });
-              });
+              document.querySelector("#gospel").innerHTML = gospelIntro + "<br><br>" + reading.gospel;
+              document.querySelector("#gospel").classList.replace("placeholder", "liturgy");
+            });
       }
 
     </script>
