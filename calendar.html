@@ -55,11 +55,15 @@
                                     output += "<tr><td>";
                                 }
                                 
+                                output += "<a class=\"noDecoration\" href=\"./services/The-Lords-Supper-or-Holy-Communion.html?serviceId=" + result[i].id + "\">";
+
                                 output += result[i].name;
 
                                 if (result[i].altname) {
                                     output += " <span class=\"small\">(" + result[i].altname + ")</span>";
                                 }
+
+                                output += "</a>";
 
                                 if(result[i].id == serviceId) {
                                     output += "</strong></td><td><strong>";
