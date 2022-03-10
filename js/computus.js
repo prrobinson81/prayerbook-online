@@ -130,3 +130,27 @@ function GetTodaysService() {
             }
         });
 }
+
+function GetServiceFromId(id) {
+    var basePath;
+
+    switch(window.location.hostname){
+        case "localhost": 
+            basePath = window.location.origin;
+            break;
+        case "prrobinson81.github.io":
+            basePath = window.location.origin + "/prayerbook-online";
+            break;
+        default:
+            basePath = "./";
+    }
+
+    return fetch(basePath + "/js/dates.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(calendar) {
+                var service = Object.values(calendar).find(sunday => sunday.id === id);
+                return service;
+            });
+}
