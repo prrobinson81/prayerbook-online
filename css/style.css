@@ -154,6 +154,10 @@ nav {
     }
 }
 
+a.noDecoration {
+    text-decoration: none;
+}
+
 div.hamburger {
     width: 16px;
     height: 2px;
