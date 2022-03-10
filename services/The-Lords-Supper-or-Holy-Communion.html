@@ -44,16 +44,18 @@
           .then(function(readings) {
               var reading = Object.values(readings).find(sunday => sunday.id === today.id)
 
-              var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistleRef.chapter) + " Chapter of " + bookLookup[reading.epistleRef.book] + " beginning at the " + numberToReference(reading.epistleRef.firstVerse) + " Verse";
-              var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospelRef.chapter) + " Chapter of " + bookLookup[reading.gospelRef.book] + " beginning at the " + numberToReference(reading.gospelRef.firstVerse) + " Verse";
+              var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistle.ref.chapter) + " Chapter of " + bookLookup[reading.epistle.ref.book] + " beginning at the " + numberToReference(reading.epistle.ref.firstVerse) + " Verse";
+              var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospel.ref.chapter) + " Chapter of " + bookLookup[reading.gospel.ref.book] + " beginning at the " + numberToReference(reading.gospel.ref.firstVerse) + " Verse";
 
-              document.querySelector("#collect-of-the-day").innerHTML = reading.collect;
+              reading.collects.forEach(function(collect) {
+                document.querySelector("#collect-of-the-day").innerHTML += collect + "<br><br>";
+              })              
               document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
 
-              document.querySelector("#epistle").innerHTML = epistleIntro + "<br><br>" + reading.epistle;
+              document.querySelector("#epistle").innerHTML = epistleIntro + "<br><br>" + reading.epistle.text;
               document.querySelector("#epistle").classList.replace("placeholder", "liturgy");
 
-              document.querySelector("#gospel").innerHTML = gospelIntro + "<br><br>" + reading.gospel;
+              document.querySelector("#gospel").innerHTML = gospelIntro + "<br><br>" + reading.gospel.text;
               document.querySelector("#gospel").classList.replace("placeholder", "liturgy");
             });
       }
