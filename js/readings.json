@@ -429,7 +429,7 @@
             "text": "THE end of all things is at hand: be ye therefore sober, and watch unto prayer. And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins. Use hospitality one to another without grudging. As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God. If any man speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth: that God in all things may be glorified through Jesus Christ, to whom be praise and dominion for ever and ever. Amen."
         },
         "gospel": {
-                "ref": { "book": "S.John", "verses": [ { "chapter": "15", "from": "26", "to": "end" } ] },
+                "ref": { "book": "S.John", "verses": [ { "chapter": "15", "from": "26", "to": "end" }, { "chapter": "16", "from": "1", "to": "4" } ] },
                 "text": "WHEN the Comforter is come, whom I will send unto you from the Father, even the Spirit of truth, which proceedeth from the Father, he shall testify of me: And ye also shall bear witness, because ye have been with me from the beginning. These things have I spoken unto you, that ye should not be offended. They shall put you out of the synagogues: yea, the time cometh, that whosoever killeth you will think that he doeth God service. And these things will they do unto you, because they have not known the Father, nor me. But these things have I told you, that when the time shall come, ye may remember that I told you of them."
         }
     },
