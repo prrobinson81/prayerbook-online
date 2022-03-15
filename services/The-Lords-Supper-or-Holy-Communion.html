@@ -44,8 +44,8 @@
           .then(function(readings) {
               var reading = Object.values(readings).find(sunday => sunday.id === today.id)
 
-              var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistle.ref.chapter) + " Chapter of " + bookLookup[reading.epistle.ref.book] + " beginning at the " + numberToReference(reading.epistle.ref.firstVerse) + " Verse";
-              var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospel.ref.chapter) + " Chapter of " + bookLookup[reading.gospel.ref.book] + " beginning at the " + numberToReference(reading.gospel.ref.firstVerse) + " Verse";
+              var epistleIntro = "The Epistle is written in the " + numberToReference(reading.epistle.ref.verses[0].chapter) + " Chapter of " + bookLookup[reading.epistle.ref.book] + " beginning at the " + numberToReference(reading.epistle.ref.verses[0].from) + " Verse";
+              var gospelIntro = "The holy Gospel is written in the " + numberToReference(reading.gospel.ref.verses[0].chapter) + " Chapter of " + bookLookup[reading.gospel.ref.book] + " beginning at the " + numberToReference(reading.gospel.ref.verses[0].from) + " Verse";
 
               reading.collects.forEach(function(collect) {
                 document.querySelector("#collect-of-the-day").innerHTML += collect + "<br><br>";
