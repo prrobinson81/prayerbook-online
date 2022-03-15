@@ -44,7 +44,7 @@
                             lastSunday = lastSunday.toDateString();
 
 
-                            let output = "<table><thead><tr><th>Name</th><th>Date</th></tr></thead><tbody>";
+                            let output = "<table><thead><tr><th>Name</th><th>Date</th><th></th></tr></thead><tbody>";
                                 
                             for (let i in result) {
                                 
@@ -55,15 +55,11 @@
                                     output += "<tr><td>";
                                 }
                                 
-                                output += "<a class=\"noDecoration\" href=\"./services/The-Lords-Supper-or-Holy-Communion.html?serviceId=" + result[i].id + "\">";
-
                                 output += result[i].name;
 
                                 if (result[i].altname) {
                                     output += " <span class=\"small\">(" + result[i].altname + ")</span>";
                                 }
-
-                                output += "</a>";
 
                                 if(result[i].id == serviceId) {
                                     output += "</strong></td><td><strong>";
@@ -75,11 +71,17 @@
                                 output += result[i].Date.toDateString();
                                         
                                 if(result[i].id == serviceId) {
-                                    output += "</strong></td></tr>";
+                                    output += "</strong></td>";
                                 }
                                 else {
-                                    output += "</td></tr>";
+                                    output += "</td>";
                                 }
+
+                                output += "<td>";
+                                output += "<a class=\"noDecoration\" href=\"./services/The-Lords-Supper-or-Holy-Communion.html?serviceId=" + result[i].id + "\">";
+                                output += "<img src=\"../images/icons/icon-72x72.png\" class=\"icon\">";
+                                output += "</a>";
+                                output += "</td></tr>";
                             }
 
                             output += "</tbody></table>";

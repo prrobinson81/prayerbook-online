@@ -76,6 +76,17 @@ nav {
     height: 4rem;
 }
 
+.icon {
+    height: 1rem;
+    filter: grayscale(1);
+}
+
+@media (prefers-color-scheme: dark) {
+    .icon {
+        filter: grayscale(1) invert(1);
+    }
+}
+
 .topnav {
     background-color: var(--navbg);
     overflow: hidden;
