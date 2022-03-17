@@ -1,5 +1,6 @@
 var bookLookup = { 
     "Isaiah": "Isaiah",
+    "Jer": "Jeremiah",
     "Joel": "Joel",
     "S.Matth": "St Matthew",
     "S.Mark": "St Mark",
