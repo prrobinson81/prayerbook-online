@@ -77,12 +77,12 @@ nav {
 }
 
 .icon {
-    height: 1rem;
-    filter: grayscale(1);
+    height: 1.5rem;
+    padding-left: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
-    .icon {
+    .invert {
         filter: grayscale(1) invert(1);
     }
 }
