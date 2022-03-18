@@ -11,6 +11,8 @@ const assets = [
     "./js/dates.json",
     "./js/readings.json",
     "./images/EucharistElementsHeader-noFont.svg",
+    "./images/EucharistElements.png",
+    "./images/Readings.png",
     "./services/The-Lords-Supper-or-Holy-Communion.html",
 ]
 
