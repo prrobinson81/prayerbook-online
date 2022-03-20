@@ -81,7 +81,7 @@
                                 output += "<a class=\"noDecoration\" href=\"./services/The-Lords-Supper-or-Holy-Communion.html?serviceId=" + result[i].id + "\">";
                                 output += "<img src=\"./images/EucharistElements.png\" class=\"icon\">";
                                 output += "</a>";
-                                output += "<img src=\"./images/Readings.png\" class=\"icon\">";
+                                output += "<img src=\"./images/Readings.png\" class=\"icon\" onclick=\"showReadings()\">";
                                 output += "</td></tr>";
                             }
 
@@ -89,6 +89,12 @@
                             document.querySelector("#calendar").innerHTML = output;
                         });
                     });
+            }
+
+            function showReadings() {
+                document.querySelector("#blurry").style.display = "block";
+                document.querySelector("#readings").style.display = "block";
+                return false;
             }
         </script>
 
@@ -124,6 +130,8 @@
             <div class="container">
                 <div class="nav"><a href="." id="lastYear">&lt;</a> <script>document.write(year);</script> <a href="." id="nextYear">&gt;</a></div>
                 <div id="calendar"></div>
+                <div id="blurrout" class="blurry"></div>
+                <div id="readings" class="readings">X</div>
             </div>
         </main>
     </body>

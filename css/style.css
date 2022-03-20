@@ -9,6 +9,7 @@
         --highlight: #FCCB00;
         --hamburgerbg: #f2f2f2;
         --dir: red;
+        --blurybg: rgba(255, 255, 255, 0.5);
     }
 }
 
@@ -23,6 +24,7 @@
         --highlight: #FCCB00;
         --hamburgerbg: #999;
         --dir: #bb4444;
+        --blurybg: rgba(8, 8, 8, 0.5);
     }
 
     strong {
@@ -204,6 +206,33 @@ div.hamburger {
 
 .hidden {
     display: none;
+}
+
+.blurry {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--blurybg);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 15;
+    display: none;
+}
+
+.readings {
+    top: 5vh;
+    left: 5vw;
+    width: 90vw;
+    height: 90vh;
+    padding: 0.5rem;
+    overflow: hidden;
+    background-color: var(--bg);
+    position: fixed;
+    z-index: 20;
+    display: none;
+    border: 1px var(--fg) solid;
 }
 
 .small {
