@@ -218,7 +218,6 @@ div.hamburger {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     z-index: 15;
-    display: none;
 }
 
 .readings {
@@ -231,7 +230,6 @@ div.hamburger {
     background-color: var(--bg);
     position: fixed;
     z-index: 20;
-    display: none;
     border: 1px var(--fg) solid;
 }
 

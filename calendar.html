@@ -92,8 +92,14 @@
             }
 
             function showReadings() {
-                document.querySelector("#blurout").style.display = "block";
-                document.querySelector("#readings").style.display = "block";
+                document.querySelector("#blurout").classList.remove("hidden");
+                document.querySelector("#readings").classList.remove("hidden");
+                return false;
+            }
+
+            function hideReadings() {
+                document.querySelector("#blurout").classList.add("hidden");
+                document.querySelector("#readings").classList.add("hidden");
                 return false;
             }
         </script>
@@ -130,8 +136,18 @@
             <div class="container">
                 <div class="nav"><a href="." id="lastYear">&lt;</a> <script>document.write(year);</script> <a href="." id="nextYear">&gt;</a></div>
                 <div id="calendar"></div>
-                <div id="blurout" class="blurry"></div>
-                <div id="readings" class="readings">X</div>
+                <div id="blurout" class="blurry hidden"></div>
+                <div id="readings" class="readings hidden">
+                    <span onclick="hideReadings()">X</span><br><br>
+                    <p class="direction">The Collect:</p>
+                    <p id="collect-of-the-day" class="placeholder"></p>
+        
+                    <p class="direction">The Epistle:</p>
+                    <p id="epistle" class="placeholder"></p>
+        
+                    <p class="direction">The Gospel:</p>
+                    <p id="gospel" class="placeholder"></p>
+                </div>
             </div>
         </main>
     </body>
