@@ -111,7 +111,7 @@
                 document.querySelector("#serviceTitle").innerHTML = today.name;
                 document.querySelector("#serviceTitle").classList.remove("placeholder");
 
-                return fetch("../js/readings.json")
+                return fetch("./js/readings.json")
                 .then(function(response) {
                     return response.json();
                     })
