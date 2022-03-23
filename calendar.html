@@ -122,7 +122,7 @@
                     var gospelIntro = reading.gospel.ref.book + " " + reading.gospel.ref.verses[0].chapter + ":" + reading.gospel.ref.verses[0].from + "-" + reading.gospel.ref.verses[0].to;
 
                     reading.collects.forEach(function(collect) {
-                        document.querySelector("#collect-of-the-day").innerHTML += collect + "<br><br>";
+                        document.querySelector("#collect-of-the-day").innerHTML = collect + "<br><br>";
                     })              
                     document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
 
