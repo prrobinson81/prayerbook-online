@@ -220,6 +220,12 @@ div.hamburger {
     z-index: 15;
 }
 
+.scrollVer {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 90%;
+}
+
 .readings {
     top: 5vh;
     left: 5vw;
