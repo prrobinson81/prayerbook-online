@@ -81,7 +81,7 @@
                                 output += "<a class=\"noDecoration\" href=\"./services/The-Lords-Supper-or-Holy-Communion.html?serviceId=" + result[i].id + "\">";
                                 output += "<img src=\"./images/EucharistElements.png\" class=\"icon\">";
                                 output += "</a>";
-                                output += "<img src=\"./images/Readings.png\" class=\"icon\" onclick=\"showReadings()\">";
+                                output += "<img src=\"./images/Readings.png\" class=\"icon\" onclick=\"showReadings('" + result[i].id + "')\">";
                                 output += "</td></tr>";
                             }
 
@@ -91,16 +91,47 @@
                     });
             }
 
-            function showReadings() {
+            function showReadings(serviceId) {
                 document.querySelector("#blurout").classList.remove("hidden");
                 document.querySelector("#readings").classList.remove("hidden");
-                return false;
+                
+                GetServiceFromId(serviceId)
+                    .then(function(service) {
+                        SetServiceContent(service);
+                    });
             }
 
             function hideReadings() {
                 document.querySelector("#blurout").classList.add("hidden");
                 document.querySelector("#readings").classList.add("hidden");
                 return false;
+            }
+            
+            function SetServiceContent(today) {
+                document.querySelector("#serviceTitle").innerHTML = today.name;
+                document.querySelector("#serviceTitle").classList.remove("placeholder");
+
+                return fetch("../js/readings.json")
+                .then(function(response) {
+                    return response.json();
+                    })
+                .then(function(readings) {
+                    var reading = Object.values(readings).find(sunday => sunday.id === today.id)
+
+                    var epistleIntro = reading.epistle.ref.book + " " + reading.epistle.ref.verses[0].chapter + ":" + reading.epistle.ref.verses[0].from + "-" + reading.epistle.ref.verses[0].to;
+                    var gospelIntro = reading.gospel.ref.book + " " + reading.gospel.ref.verses[0].chapter + ":" + reading.gospel.ref.verses[0].from + "-" + reading.gospel.ref.verses[0].to;
+
+                    reading.collects.forEach(function(collect) {
+                        document.querySelector("#collect-of-the-day").innerHTML += collect + "<br><br>";
+                    })              
+                    document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
+
+                    document.querySelector("#epistle").innerHTML = epistleIntro + "<br><br>" + reading.epistle.text;
+                    document.querySelector("#epistle").classList.replace("placeholder", "liturgy");
+
+                    document.querySelector("#gospel").innerHTML = gospelIntro + "<br><br>" + reading.gospel.text;
+                    document.querySelector("#gospel").classList.replace("placeholder", "liturgy");
+                    });
             }
         </script>
 
@@ -139,6 +170,7 @@
                 <div id="blurout" class="blurry hidden"></div>
                 <div id="readings" class="readings hidden">
                     <span onclick="hideReadings()">X</span><br><br>
+                    <h1 id="serviceTitle" class="placeholder"></h1>
                     <p class="direction">The Collect:</p>
                     <p id="collect-of-the-day" class="placeholder"></p>
         
