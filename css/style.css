@@ -224,14 +224,13 @@ div.hamburger {
     overflow-x: hidden;
     overflow-y: auto;
     height: 90%;
-    border: 1px solid white;
 }
 
 .readings {
     top: 5vh;
     left: 5vw;
     width: 90vw;
-    height: 90vh;
+    height: 80vh;
     padding: 0.5rem;
     background-color: var(--bg);
     position: fixed;
