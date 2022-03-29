@@ -119,9 +119,12 @@
                     var reading = Object.values(readings).find(sunday => sunday.id === today.id)
 
                     var epistleIntro = bookLookup[reading.epistle.ref.book].cw + " " + reading.epistle.ref.verses[0].chapter + ":" + reading.epistle.ref.verses[0].from + "-" + reading.epistle.ref.verses[0].to;
+                    epistleIntro = "<a href=\"https://www.biblegateway.com/passage/?search=" + epistleIntro + "\" target=\"_blank\">" + epistleIntro;
+                    
                     var gospelIntro = bookLookup[reading.gospel.ref.book].cw + " " + reading.gospel.ref.verses[0].chapter + ":" + reading.gospel.ref.verses[0].from + "-" + reading.gospel.ref.verses[0].to;
-
-                    reading.collects.forEach(function(collect) {
+                    gospelIntro = "<a href=\"https://www.biblegateway.com/passage/?search=" + gospelIntro + "\" target=\"_blank\">" + gospelIntro;
+                    
+                        reading.collects.forEach(function(collect) {
                         document.querySelector("#collect-of-the-day").innerHTML = collect + "<br><br>";
                     })              
                     document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
