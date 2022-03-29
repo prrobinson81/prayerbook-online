@@ -223,8 +223,8 @@ div.hamburger {
 .scrollVer {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 90%;
-    margin: 0.5rem;
+    height: 85%;
+    margin: 0 1rem;
 }
 
 .readings {
