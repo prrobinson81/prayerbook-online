@@ -223,8 +223,9 @@ div.hamburger {
 .scrollVer {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 85%;
+    flex-grow: 1;
     margin: 0 1rem;
+    padding: 0.5rem;
 }
 
 .readings {
@@ -237,6 +238,8 @@ div.hamburger {
     position: fixed;
     z-index: 20;
     border: 1px var(--fg) solid;
+    display: flex;
+    flex-direction: column;
 }
 
 .small {
