@@ -92,8 +92,8 @@
             }
 
             function showReadings(serviceId) {
-                document.querySelector("#blurout").attributes.remove("hidden");
-                document.querySelector("#readings").attributes.remove("hidden");
+                document.querySelector("#blurout").classList.remove("hidden");
+                document.querySelector("#readings").classList.remove("hidden");
                 
                 GetServiceFromId(serviceId)
                     .then(function(service) {
@@ -102,8 +102,8 @@
             }
 
             function hideReadings() {
-                document.querySelector("#blurout").attributes.add("hidden");
-                document.querySelector("#readings").attributes.add("hidden");
+                document.querySelector("#blurout").classList.add("hidden");
+                document.querySelector("#readings").classList.add("hidden");
                 return false;
             }
             

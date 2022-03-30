@@ -205,7 +205,7 @@ div.hamburger {
 }
 
 [hidden] {
-    display: none;
+    display: none !important;
 }
 
 .blurry {
