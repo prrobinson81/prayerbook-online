@@ -92,8 +92,8 @@
             }
 
             function showReadings(serviceId) {
-                document.querySelector("#blurout").classList.remove("hidden");
-                document.querySelector("#readings").classList.remove("hidden");
+                document.querySelector("#blurout").attributes.remove("hidden");
+                document.querySelector("#readings").attributes.remove("hidden");
                 
                 GetServiceFromId(serviceId)
                     .then(function(service) {
@@ -102,8 +102,8 @@
             }
 
             function hideReadings() {
-                document.querySelector("#blurout").classList.add("hidden");
-                document.querySelector("#readings").classList.add("hidden");
+                document.querySelector("#blurout").attributes.add("hidden");
+                document.querySelector("#readings").attributes.add("hidden");
                 return false;
             }
             
@@ -170,8 +170,8 @@
             <div class="container">
                 <div class="nav"><a href="." id="lastYear">&lt;</a> <script>document.write(year);</script> <a href="." id="nextYear">&gt;</a></div>
                 <div id="calendar"></div>
-                <div id="blurout" class="blurry hidden"></div>
-                <div id="readings" class="readings hidden">
+                <div id="blurout" class="blurry" hidden="hidden"></div>
+                <div id="readings" class="readings" hidden="hidden">
                     <span style="float: right" onclick="hideReadings()">X</span><br><br>
                     <h1 id="serviceTitle" class="placeholder"></h1>
                     <div id="scroller" class="scrollVer">
