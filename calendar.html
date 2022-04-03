@@ -81,7 +81,7 @@
                                 output += "<a class=\"noDecoration\" href=\"./services/The-Lords-Supper-or-Holy-Communion.html?serviceId=" + result[i].id + "\">";
                                 output += "<img src=\"./images/EucharistElements.png\" class=\"icon\">";
                                 output += "</a>";
-                                output += "<img src=\"./images/Readings.png\" class=\"icon\" onclick=\"showReadings('" + result[i].id + "')\">";
+                                output += "<img src=\"./images/Readings.png\" style=\"cursor: pointer\" class=\"icon\" onclick=\"showReadings('" + result[i].id + "')\">";
                                 output += "</td></tr>";
                             }
 
@@ -172,7 +172,7 @@
                 <div id="calendar"></div>
                 <div id="blurout" class="blurry hidden"></div>
                 <div id="readings" class="readings hidden">
-                    <div style="text-align: right" onclick="hideReadings()">X</div>
+                    <div style="text-align: right; cursor: pointer" onclick="hideReadings()">X</div>
                     <h1 id="serviceTitle" class="placeholder"></h1>
                     <div id="scroller" class="scrollVer">
                         <p class="direction">The Collect:</p>
