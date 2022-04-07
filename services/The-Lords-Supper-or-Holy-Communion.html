@@ -18,6 +18,7 @@
       const urlParams = new URLSearchParams(queryString);
 
       var serviceId;
+      var serviceStyle;
 
       onload = function() {
         if(urlParams.has("serviceId")) {
@@ -33,7 +34,7 @@
             });                
         }
 
-        var serviceStyle = localStorage.getItem(window.location.hostname);
+        serviceStyle = localStorage.getItem(window.location.hostname);
         if(serviceStyle) {
         } else {
           serviceStyle = "bcp-trad";
