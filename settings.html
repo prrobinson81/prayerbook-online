@@ -19,7 +19,7 @@
                 if(data) {
                     document.getElementById(data).checked = true;
                 } else {
-                    document.getElementById("bcp-trad").checked = true;
+                    document.getElementById("bcptrad").checked = true;
                     SetServiceStyle();
                 }
             }
@@ -64,9 +64,9 @@
                 <form>
                     <fieldset>
                         <legend>Set the preferred service style:</legend>
-                        <input type="radio" id="bcp-trad" name="serviceStyle" value="bcp-trad" onchange="SetServiceStyle();">
+                        <input type="radio" id="bcptrad" name="serviceStyle" value="bcptrad" onchange="SetServiceStyle();">
                         <label for="bcp-trad">BCP (Traditional)</label><br>
-                        <input type="radio" id="bcp-standrews" name="serviceStyle" value="bcp-standrews" onchange="SetServiceStyle();">
+                        <input type="radio" id="bcpstandrews" name="serviceStyle" value="bcpstandrews" onchange="SetServiceStyle();">
                         <label for="bcp-standrews">BCP (St Andrew's)</label>
                     </fieldset>
                 </form>

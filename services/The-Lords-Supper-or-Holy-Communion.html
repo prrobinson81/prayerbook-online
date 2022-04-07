@@ -38,18 +38,18 @@
         serviceStyle = localStorage.getItem(window.location.hostname);
         if(serviceStyle) {
         } else {
-          serviceStyle = "bcp-trad";
+          serviceStyle = "bcptrad";
         }
 
         FilterServiceContent(serviceStyle);
       }
 
       function FilterServiceContent(style) {
-        var elements = document.querySelectorAll("[data-serviceStyle]");
-        
+        var elements = document.querySelectorAll("[data-servicestyle]");
+       
         elements.forEach(el => {
-          if(el.attributes("data-serviceStyle") != style) {
-            el.classList += "hidden";
+          if(el.dataset.servicestyle != style) {
+            el.classList.add("hidden");
           }
         })
       }
@@ -125,7 +125,7 @@
 
         <p class="direction">The Table at the Communion time having a fair white linen cloth upon it, shall stand in the body of the Church, or in the Chancel, where Morning and Evening Prayer are appointed to be said. And the Priest standing at the north side of the Table shall say the Lord's Prayer with the Collect following, the people kneeling.</p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Our Father which art in heaven,<br />
           Hallowed be thy Name, <br />
           Thy kingdom come,<br />
@@ -139,9 +139,9 @@
 
         <h3>The Collect</h3>
 
-        <p class="liturgy"<span class="instr" data-serviceStyle="bcp-standrews">People.</span>ALMIGHTY God, unto whom all hearts be open, all desires known, and from whom no secrets are hid: Cleanse the thoughts of our hearts by the inspiration of thy Holy Spirit, that we may perfectly love thee, and worthily magnify thy holy Name; through Christ our Lord. <em>Amen</em>.</p>
+        <p class="liturgy"><span class="instr" data-servicestyle="bcpstandrews">People.</span>ALMIGHTY God, unto whom all hearts be open, all desires known, and from whom no secrets are hid: Cleanse the thoughts of our hearts by the inspiration of thy Holy Spirit, that we may perfectly love thee, and worthily magnify thy holy Name; through Christ our Lord. <em>Amen</em>.</p>
 
-        <div data-serviceStyle="bcp-trad">
+        <div data-servicestyle="bcptrad">
 
           <p class="direction">Then shall the Priest, turning to the people, rehearse distinctly all the TEN COMMANDMENTS: and the people still kneeling shall after every Commandment ask God mercy for their transgression thereof for the time past, and grace to keep the same for the time to come, as followeth.</p>
 
@@ -193,20 +193,27 @@
 
         <p class="liturgy">ALMIGHTY God, whose kingdom is ever-lasting, and power infinite: Have mercy upon the whole Church; and so rule the heart of thy chosen servant <em>ELIZABETH</em>, our Queen and Governor, that she (knowing whose minister she is) may above all things seek thy honour and glory: and that we and all her subjects (duly considering whose authority she hath) may faithfully serve, honour, and humbly obey her, in thee, and for thee, according to thy blessed Word and ordinance; through Jesus Christ our Lord, who with thee and the Holy Ghost liveth and reigneth, ever one God, world without end. <em>Amen</em>.</p>
 
-        <p class="direction" data-serviceStyle="bcp-trad">Or,</p>
+        <p class="direction" data-servicestyle="bcptrad">Or,</p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">ALMIGHTY and everlasting God, we are taught by thy holy Word, that the hearts of Kings are in thy rule and governance, and that thou dost dispose and turn them as it seemeth best to thy godly wisdom: We humbly beseech thee so to dispose and govern the heart of <em>ELIZABETH</em> thy servant, our Queen and Governor, that in all her thoughts, words, and works, she may ever seek thy honour and glory, and study to preserve thy people committed to her charge, in wealth, peace and godliness: Grant this, O merciful Father, for thy dear Son's sake, Jesus Christ our Lord. <em>Amen</em>.</p>
+        <p class="liturgy" data-servicestyle="bcptrad">ALMIGHTY and everlasting God, we are taught by thy holy Word, that the hearts of Kings are in thy rule and governance, and that thou dost dispose and turn them as it seemeth best to thy godly wisdom: We humbly beseech thee so to dispose and govern the heart of <em>ELIZABETH</em> thy servant, our Queen and Governor, that in all her thoughts, words, and works, she may ever seek thy honour and glory, and study to preserve thy people committed to her charge, in wealth, peace and godliness: Grant this, O merciful Father, for thy dear Son's sake, Jesus Christ our Lord. <em>Amen</em>.</p>
 
         <p class="direction">Then shall be said the Collect of the Day.</p>
+        
         <p id="collect-of-the-day" class="placeholder"></p>
         
         <p class="direction">And immediately after the Collect the Priest shall read the Epistle, saying, The Epistle [or, The portion of Scripture appointed for the Epistle] is written in the - Chapter of - beginning at the - Verse.</p>
+        
         <p id="epistle" class="placeholder"></p>
         
-        <p class="direction">And the Epistle ended, he shall say, Here endeth the Epistle. Then shall he read the Gospel (the people all standing up) saying, The holy Gospel is written in the - Chapter of - beginning at the - Verse.</p>
-        <p class="liturgy" data-serviceStyle="bcp-standrews"><span class="instr">People.</span>Glory be to thee, O Lord.</p>
+        <p class="direction">And the Epistle ended, he shall say, Here endeth the Epistle.</p>
+        
+        <p class="liturgy" data-servicestyle="bcpstandrews"><span class="instr">People.</span>Glory be to thee, O Lord.</p>
+
+        <p class="direction">Then shall he read the Gospel (the people all standing up) saying, The holy Gospel is written in the - Chapter of - beginning at the - Verse.</p>
+        
         <p id="gospel" class="placeholder"></p>
-        <p class="liturgy" data-serviceStyle="bcp-standrews"><span class="instr">People.</span>Thanks be unto thee O Lord, for this thy Holy Gospel.</p>
+
+        <p class="liturgy" data-servicestyle="bcpstandrews"><span class="instr">People.</span>Thanks be unto thee O Lord, for this thy Holy Gospel.</p>
 
         <p class="direction">And the Gospel ended, shall be sung or said the Creed following, the people still standing as before.</p>
         
@@ -216,7 +223,7 @@
 
         <p class="liturgy">And I believe in the Holy Ghost, The Lord and giver of life, Who proceedeth from the Father and the Son, Who with the Father and the Son together is worshipped and glorified, Who spake by the Prophets. And I believe one Catholick and Apostolick Church. I acknowledge one Baptism for the remission of sins. And I look for the Resurrection of the dead, And the life of the world to come. Amen.</p>
 
-        <p class="direction" data-serviceStyle="bcp-trad">Then the Curate shall declare unto the people what Holy-days, or Fasting-days, are in the week following to be observed. And then also (if occasion be) shall notice be given of the Communion; and Briefs, Citations, and Excommunications read. And nothing shall be proclaimed or published in the Church during the time of Divine Service, but by the Minister: nor by him any thing but what is prescribed in the Rules of this Book, or enjoined by the Queen, or by the Ordinary of the place.</p>
+        <p class="direction" data-servicestyle="bcptrad">Then the Curate shall declare unto the people what Holy-days, or Fasting-days, are in the week following to be observed. And then also (if occasion be) shall notice be given of the Communion; and Briefs, Citations, and Excommunications read. And nothing shall be proclaimed or published in the Church during the time of Divine Service, but by the Minister: nor by him any thing but what is prescribed in the Rules of this Book, or enjoined by the Queen, or by the Ordinary of the place.</p>
 
         <p class="direction">Then shall follow the Sermon, or one of the Homilies already set forth, or hereafter to be set forth, by authority.</p>
 
@@ -227,102 +234,102 @@
           <em>St. Matthew 5</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Lay not up for yourselves treasure upon the earth; where the rust and moth doth corrupt, and where thieves break through and steal: but lay up for yourselves treasures in heaven; where neither rust nor moth doth corrupt, and where thieves do not break through and steal. <br />
           <em>St. Matthew 6</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Whatsoever ye would that men should do unto you, even so do unto them; for this is the Law and the Prophets. <br />
           <em>St. Matthew 7</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Not every one that saith unto me, Lord, Lord, shall enter into the kingdom of heaven; but he that doeth the will of my Father which is in heaven. <br />
           <em>St. Matthew 7</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Zacchaeus stood forth, and said unto the Lord, Behold, Lord, the half of my goods I give to the poor; and if I have done any wrong to any man, I restore four-fold. <br />
           <em>St. Luke 19</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Who goeth a warfare at any time of his own cost? who planteth a vineyard, and eateth not of the fruit thereof? or who feedeth a flock, and eateth not of the milk of the flock? <br />
           <em>1 Corinthians 9</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           If we have sown unto you spiritual things, is it a great matter if we shall reap your worldly things. <br />
           <em>1 Corinthians 9</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Do ye not know that they who minister about holy things live of the sacrifice; and they who wait at the altar are partakers with the altar? Even so hath the Lord also ordained, that they who preach the Gospel should live of the Gospel. <br />
           <em>1 Corinthians 9</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           He that soweth little shall reap little; and he that soweth plenteously shall reap plenteously. Let every man do according as he is disposed in his heart, not grudging, or of necessity; for God loveth a cheerful giver. <br />
           <em>2 Corinthians 9</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Let him that is taught in the word minister unto him that teacheth, in all good things. Be not deceived, God is not mocked: for whatsoever a man soweth that shall he reap. <br />
           <em>Galatians 6</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           While we have time, let us do good unto all men; and specially unto them that are of the household of faith. <br />
           <em>Galatians 6</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Godliness is great riches, if a man be content with that he hath: for we brought nothing into the world, neither may we carry any thing out. <br />
           <em>1 St. Timothy 6</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Charge them who are rich in this world, that they be ready to give, and glad to distribute; laying up in store for themselves a good foundation against the time to come, that they may attain eternal life. <br />
           <em>1 St. Timothy 6</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           God is not unrighteous, that he will forget your works, and labour that proceedeth of love; which love ye have shewed for his name's sake, who have ministered unto the saints, and yet do minister. <br />
           <em>Hebrews 6</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           To do good and to distribute forget not; for with such sacrifices God is pleased. <br />
           <em>Hebrews 13</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Whoso hath this world's good, and seeth his brother have need, and shutteth up his compassion from him, how dwelleth the love of God in him? <br />
           <em>1 St. John 3</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Give alms of thy goods, and never turn thy face from any poor man; and then the face of the Lord shall not be turned away from thee. <br />
           <em>Tobit 4</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Be merciful after thy power. If thou hast much, give plenteously; if thou hast little, do thy diligence gladly to give of that little; for so gatherest thou thyself a good reward in the day of necessity. <br />
           <em>Tobit 4</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           He that hath pity upon the poor lendeth unto the Lord: and look, what he layeth out, it shall be paid him again. <br />
           <em>Proverbs 19</em>.
         </p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">
+        <p class="liturgy" data-servicestyle="bcptrad">
           Blessed be the man that provideth for the sick and needy: the Lord shall deliver him in the time of trouble. <br />
           <em>Psalms 41</em>.
         </p>
 
-        <p class="direction" data-serviceStyle="bcp-trad">Whilst these Sentences are in reading, the Deacons, Churchwardens, or other fit person appointed for that purpose, shall receive the Alms for the Poor, and other devotions of the people, in a decent bason to be provided by the Parish for that purpose; and reverently bring it to the Priest, who shall humbly present and place it upon the holy Table.</p>
+        <p class="direction" data-servicestyle="bcptrad">Whilst these Sentences are in reading, the Deacons, Churchwardens, or other fit person appointed for that purpose, shall receive the Alms for the Poor, and other devotions of the people, in a decent bason to be provided by the Parish for that purpose; and reverently bring it to the Priest, who shall humbly present and place it upon the holy Table.</p>
 
         <p class="direction">And when there is a Communion, the Priest shall then place upon the Table so much Bread and Wine as he shall think sufficient. After which done, the Priest shall say,</p>
 
@@ -358,7 +365,7 @@
 
         <p class="direction">Then shall this general Confession be made, in the name of all those that are minded to receive the holy Communion, by one of the Ministers: both he and all the people kneeling humbly upon their knees and saying,</p>
 
-        <p class="liturgy"><span class="instr" data-serviceStyle="bcp-standrews">People.</span>Almighty God, Father of our Lord Jesus Christ, Maker of all things, Judge of all men: We acknowledge and bewail our manifold sins and wickedness, Which we from time to time most grievously have committed, By thought, word, and deed, Against thy Divine Majesty, Provoking most justly thy wrath and indignation against us. We do earnestly repent, And are heartily sorry for these our misdoings; The remembrance of them is grievous unto us; The burden of them is intolerable. Have mercy upon us, Have mercy upon us, most merciful Father; For thy Son our Lord Jesus Christ's sake, Forgive us all that is past; And grant that we may ever hereafter Serve and please thee In newness of life, To the honour and glory of thy Name; Through Jesus Christ our Lord. Amen.</p>
+        <p class="liturgy"><span class="instr" data-servicestyle="bcpstandrews">People.</span>Almighty God, Father of our Lord Jesus Christ, Maker of all things, Judge of all men: We acknowledge and bewail our manifold sins and wickedness, Which we from time to time most grievously have committed, By thought, word, and deed, Against thy Divine Majesty, Provoking most justly thy wrath and indignation against us. We do earnestly repent, And are heartily sorry for these our misdoings; The remembrance of them is grievous unto us; The burden of them is intolerable. Have mercy upon us, Have mercy upon us, most merciful Father; For thy Son our Lord Jesus Christ's sake, Forgive us all that is past; And grant that we may ever hereafter Serve and please thee In newness of life, To the honour and glory of thy Name; Through Jesus Christ our Lord. Amen.</p>
 
         <p class="direction">Then shall the Priest (or the Bishop, being present,) stand up, and turning himself to the people, pronounce this Absolution</p>
 
@@ -409,7 +416,7 @@
 
         <p class="direction">Here shall follow the proper Preface, according to the time, if there be any specially appointed: or else immediately shall follow,</p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">Therefore with Angels and Archangels, and with all the company of heaven, we laud and magnify thy glorious Name; evermore praising thee, and saying: Holy, holy, holy, Lord God of hosts, heaven and earth are full of thy glory: Glory be to thee, O Lord most High. Amen.</p>
+        <p class="liturgy" data-servicestyle="bcptrad">Therefore with Angels and Archangels, and with all the company of heaven, we laud and magnify thy glorious Name; evermore praising thee, and saying: Holy, holy, holy, Lord God of hosts, heaven and earth are full of thy glory: Glory be to thee, O Lord most High. Amen.</p>
 
         <h3>Proper Prefaces</h3>
 
@@ -430,8 +437,8 @@
 
         <p class="direction">After each of which Prefaces shall immediately be sung or said,</p>
 
-        <p class="liturgy" data-serviceStyle="bcp-trad">Therefore with Angels and Archangels, and with all the company of heaven, we laud and magnify thy glorious Name; evermore praising thee, and saying: Holy, holy, holy, Lord God of hosts, heaven and earth are full of thy glory: Glory be to thee, O Lord most High. Amen.</p>
-        <div data-serviceStyle="bcp-standrews">
+        <p class="liturgy" data-servicestyle="bcptrad">Therefore with Angels and Archangels, and with all the company of heaven, we laud and magnify thy glorious Name; evermore praising thee, and saying: Holy, holy, holy, Lord God of hosts, heaven and earth are full of thy glory: Glory be to thee, O Lord most High. Amen.</p>
+        <div data-servicestyle="bcpstandrews">
           <p class="liturgy">
             <span class="instr">Priest.</span>Therefore with Angels and Archangels, and with all the company of heaven, we laud and magnify thy glorious Name; evermore praising thee, and saying:<br>
             <span class="instr">People.</span>Holy, holy, holy, Lord God of hosts, heaven and earth are full of thy glory: Glory be to thee, O Lord most High. Amen.</p>
@@ -439,7 +446,7 @@
         
         <p class="direction">Then shall the Priest, kneeling down at the Lord's Table, say in the name of all them that shall receive the Communion this Prayer following.</p>
 
-        <p class="liturgy"><span class="instr" data-serviceStyle="bcp-standrews">People.</span>We do not presume to come to this thy Table, O merciful Lord, trusting in our own righteousness, but in thy manifold and great mercies. We are not worthy so much as to gather up the crumbs under thy Table. But thou art the same Lord, whose property is always to have mercy: Grant us therefore, gracious Lord, so to eat the flesh of thy dear Son Jesus Christ, and to drink his blood, that our sinful bodies may be made clean by his body, and our souls washed through his most precious blood, and that we may evermore dwell in him, and he in us. <em>Amen</em>.</p>
+        <p class="liturgy"><span class="instr" data-servicestyle="bcpstandrews">People.</span>We do not presume to come to this thy Table, O merciful Lord, trusting in our own righteousness, but in thy manifold and great mercies. We are not worthy so much as to gather up the crumbs under thy Table. But thou art the same Lord, whose property is always to have mercy: Grant us therefore, gracious Lord, so to eat the flesh of thy dear Son Jesus Christ, and to drink his blood, that our sinful bodies may be made clean by his body, and our souls washed through his most precious blood, and that we may evermore dwell in him, and he in us. <em>Amen</em>.</p>
 
         <p class="direction">When the Priest, standing before the Table, hath so ordered the Bread and Wine, that he may with the more readiness and decency break the Bread before the people, and take the Cup into his hands, he shall say the Prayer of Consecration, as followeth.</p>
 
@@ -467,7 +474,7 @@
         <p class="direction">Then shall the Priest say the Lord's Prayer, the people repeating after him every petition.</p>
 
         <p class="liturgy">
-          <span class="instr" data-serviceStyle="bcp-standrews">People.</span>
+          <span class="instr" data-servicestyle="bcpstandrews">People.</span>
           Our Father which art in heaven,<br />
           Hallowed be thy Name, <br />
           Thy kingdom come,<br />
@@ -492,7 +499,7 @@
         <p class="direction">Then shall be said or sung,</p>
 
         <p class="liturgy">
-          <span class="instr" data-serviceStyle="bcp-standrews">People.</span>Glory be to God on high, and in earth peace, good will towards men. We praise thee, we bless thee, we worship thee, we glorify thee, we give thanks to thee for thy great glory, O Lord God, heavenly King, God the Father Almighty.<br><br>
+          <span class="instr" data-servicestyle="bcpstandrews">People.</span>Glory be to God on high, and in earth peace, good will towards men. We praise thee, we bless thee, we worship thee, we glorify thee, we give thanks to thee for thy great glory, O Lord God, heavenly King, God the Father Almighty.<br><br>
           O Lord, the only-begotten Son, Jesu Christ; O Lord God, Lamb of God, Son of the Father, that takest away the sins of the world, have mercy upon us. Thou that takest away the sins of the world, have mercy upon us. Thou that takest away the sins of the world, receive our prayer. Thou that sittest at the right hand of God the Father, have mercy upon us.<br><br>
           For thou only art holy; thou only art the Lord; thou only, O Christ, with the Holy Ghost, art most high in the glory of God the Father. Amen.
         </p>
