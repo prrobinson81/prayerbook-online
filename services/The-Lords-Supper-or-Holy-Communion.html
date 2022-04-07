@@ -32,6 +32,14 @@
               SetServiceContent(result);
             });                
         }
+
+        var serviceStyle = localStorage.getItem(window.location.hostname);
+        if(serviceStyle) {
+        } else {
+          serviceStyle = "bcp-trad";
+        }
+
+        alert(serviceStyle);
       }
 
       function SetServiceContent(today) {
