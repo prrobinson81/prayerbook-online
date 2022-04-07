@@ -74,6 +74,10 @@ nav {
     position: fixed;
 }
 
+fieldset {
+    padding: 1rem;
+}
+
 .logo {
     height: 4rem;
 }
