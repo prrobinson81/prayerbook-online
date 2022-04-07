@@ -5,6 +5,7 @@ const assets = [
     "./calendar.html",
     "./favicon.ico",
     "./favicon.svg",
+    "./settings.html",
     "./css/style.css",
     "./js/app.js",
     "./js/computus.js",
