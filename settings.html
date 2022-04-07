@@ -15,6 +15,10 @@
         <script type="text/javascript">
             onload = function() {
             }
+
+            function SetServiceStyle() {
+                alert(document.querySelector('input[name="serviceStyle"]:checked').value);
+            }
         </script>
 
         <!-- ios support -->
@@ -48,12 +52,14 @@
                 </div>
             </nav>
             <div class="container">
-                <p>Set the preferred service style:</p>
                 <form>
-                    <input type="radio" id="bcp-trad" name="serviceStyle" value="bcp-trad">
-                    <label for="bcp-trad">BCP (Traditional)</label>
-                    <input type="radio" id="bcp-standrews" name="serviceStyle" value="bcp-standrews">
-                    <label for="bcp-standrews">BCP (St Andrew's)</label>
+                    <fieldset>
+                        <legend>Set the preferred service style:</legend>
+                        <input type="radio" id="bcp-trad" name="serviceStyle" value="bcp-trad" onchange="SetServiceStyle();">
+                        <label for="bcp-trad">BCP (Traditional)</label><br>
+                        <input type="radio" id="bcp-standrews" name="serviceStyle" value="bcp-standrews" onchange="SetServiceStyle();">
+                        <label for="bcp-standrews">BCP (St Andrew's)</label>
+                    </fieldset>
                 </form>
             </div>
         </main>
