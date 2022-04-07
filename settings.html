@@ -11,18 +11,9 @@
         <link rel="icon" href="favicon.svg" type="image/svg+xml">  
         
         <script src="js/app.js" type="text/javascript"></script>
-
+        
         <script type="text/javascript">
-            if("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/prayerbook-online/serviceWorker.js')
-                .then(
-                    function (registration) {
-                        console.log('Service worker registered!');
-                    },
-                    function (err) {
-                        console.error('Installation failed!', err);
-                    }
-                );
+            onload = function() {
             }
         </script>
 
@@ -38,19 +29,17 @@
         <meta name="apple-mobile-web-app-status-bar" content="#FCCB00" />
         <meta name="theme-color" content="#FCCB00" />
 
-        <link rel="manifest" href="manifest.json" />
-
-        <title>PrayerBook.online</title>
+        <title>PrayerBook.online | Settings</title>
     </head>
     <body>
         <main>
             <nav>
                 <object type="image/svg+xml" data="./images/EucharistElementsHeader-noFont.svg" class="logo"></object>
                 <div class="topnav" id="navbar">
-                    <a href="#about" class="active">About</a>
-                    <a href="./calendar.html">Calendar</a>
-                    <a href="./services/The-Lords-Supper-or-Holy-Communion.html">Holy Communion</a>
-                    <a href="./settings.html">Settings</a>
+                    <a href="./">About</a>
+                    <a href="calendar.html">Calendar</a>
+                    <a href="services/The-Lords-Supper-or-Holy-Communion.html">Holy Communion</a>
+                    <a href="#settings" class="active">Settings</a>
                     <a href="javascript:void(0);" class="icon" onclick="toggleHamburger()">
                         <div class="hamburger"></div>
                         <div class="hamburger"></div>
@@ -58,7 +47,8 @@
                     </a>
                 </div>
             </nav>
-            <div class="container"></div>
+            <div class="container">
+            </div>
         </main>
     </body>
 </html>
