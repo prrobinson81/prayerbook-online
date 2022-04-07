@@ -17,7 +17,12 @@
             }
 
             function SetServiceStyle() {
-                alert(document.querySelector('input[name="serviceStyle"]:checked').value);
+                var data = document.querySelector('input[name="serviceStyle"]:checked').value
+                alert(data);
+
+                localStorage.setItem(window.location.hostname, data);
+
+                alert(localStorage.getItem(window.location.hostname));
             }
         </script>
 
