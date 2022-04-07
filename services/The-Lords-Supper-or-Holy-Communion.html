@@ -45,7 +45,13 @@
       }
 
       function FilterServiceContent(style) {
-
+        var elements = document.querySelectorAll("[data-serviceStyle]");
+        
+        elements.forEach(el => {
+          if(el.attributes("data-serviceStyle") != style) {
+            el.classList += "hidden";
+          }
+        })
       }
 
       function SetServiceContent(today) {
