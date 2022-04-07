@@ -14,15 +14,16 @@
         
         <script type="text/javascript">
             onload = function() {
+                var data = localStorage.getItem(window.location.hostname);
+
+                if(data) {
+                    document.getElementById(data).checked = true;
+                }
             }
 
             function SetServiceStyle() {
-                var data = document.querySelector('input[name="serviceStyle"]:checked').value
-                alert(data);
-
+                var data = document.querySelector('input[name="serviceStyle"]:checked').value;
                 localStorage.setItem(window.location.hostname, data);
-
-                alert(localStorage.getItem(window.location.hostname));
             }
         </script>
 
