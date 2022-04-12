@@ -124,8 +124,11 @@
                     var gospelIntro = bookLookup[reading.gospel.ref.book].cw + " " + reading.gospel.ref.verses[0].chapter + ":" + reading.gospel.ref.verses[0].from + "-" + reading.gospel.ref.verses[0].to;
                     gospelIntro = "<a href=\"https://www.biblegateway.com/passage/?search=" + gospelIntro.replace(" ", "") + "&version=KJV\" target=\"_blank\">" + gospelIntro + "</a>";
                     
+ 
+                    document.querySelector("#collect-of-the-day").innerHTML = "";
+                    
                     reading.collects.forEach(function(collect) {
-                        document.querySelector("#collect-of-the-day").innerHTML = collect + "<br><br>";
+                        document.querySelector("#collect-of-the-day").innerHTML += collect + "<br><br>";
                     })              
                     document.querySelector("#collect-of-the-day").classList.replace("placeholder", "liturgy");
 
