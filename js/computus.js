@@ -124,7 +124,13 @@ function GetTodaysService() {
             lastSunday = lastSunday.toDateString();
 
             for (let i in result) {
-                if(result[i].Date.toDateString() == today || result[i].Date.toDateString() == lastSunday) {
+                if(result[i].Date.toDateString() == today) {
+                    return result[i];
+                }
+            }
+
+            for (let i in result) {
+                if(result[i].Date.toDateString() == lastSunday) {
                     return result[i];
                 }
             }
