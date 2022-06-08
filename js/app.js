@@ -31,6 +31,10 @@ var bookLookup = {
     "Rev": { "full": "The Revelation to John", "cw": "Rev" }
 };
 
+function convertRemToPixels(rem) {    
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
 function toggleHamburger() {
     var x = document.getElementById("navbar");
     if(x.className === "topnav") {

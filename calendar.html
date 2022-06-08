@@ -44,15 +44,14 @@
                             lastSunday = lastSunday.toDateString();
 
 
-                            let output = "<table><thead><tr><th>Name</th><th>Date</th><th></th></tr></thead><tbody>";
+                            let output = "<table><thead style=\"position: sticky; top: 10rem;\"><tr><th>Name</th><th>Date</th><th></th></tr></thead><tbody>";
                                 
                             for (let i in result) {
                                 
+                                output += "<tr id=\"" + result[i].id + "\"><td>";
+
                                 if(result[i].id == serviceId) {
-                                    output += "<tr><td><strong>";
-                                }
-                                else {
-                                    output += "<tr><td>";
+                                    output += "<strong>";
                                 }
                                 
                                 output += result[i].name;
@@ -87,6 +86,8 @@
 
                             output += "</tbody></table>";
                             document.querySelector("#calendar").innerHTML = output;
+
+                            window.scrollTo(0, (document.getElementById(serviceId).offsetTop) - convertRemToPixels(2));
                         });
                     });
             }
@@ -172,8 +173,10 @@
                 </div>
             </nav>
             <div class="container">
-                <div class="nav"><a href="." id="lastYear">&lt;</a> <script>document.write(year);</script> <a href="." id="nextYear">&gt;</a></div>
-                <div id="calendar"></div>
+                <div class="nav" style="position: fixed; width: -webkit-fill-available; left: 0; margin: 0 0.5rem;">
+                    <a href="." id="lastYear">&lt;</a> <script>document.write(year);</script> <a href="." id="nextYear">&gt;</a>
+                </div>
+                <div id="calendar" style="padding-top: 2.5rem;"></div>
                 <div id="blurout" class="blurry hidden"></div>
                 <div id="readings" class="readings hidden">
                     <div style="text-align: right; cursor: pointer" onclick="hideReadings()">X</div>
