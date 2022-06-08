@@ -14,7 +14,9 @@
 
         <script type="text/javascript">
             if("serviceWorker" in navigator) {
-                navigator.serviceWorker.register('/prayerbook-online/serviceWorker.js')
+                serviceWorkerPath = window.location.pathname.replace("index.html", "serviceWorker.js");
+
+                navigator.serviceWorker.register(serviceWorkerPath)
                 .then(
                     function (registration) {
                         console.log('Service worker registered!');
