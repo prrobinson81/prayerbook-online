@@ -63,7 +63,9 @@ function GetFeastDate(calendar, feast, year) {
                                 baseDate.setDate(baseDate.getDate() + (7 - baseDate.getDay()));
                                 return baseDate;
                             case "SundayBefore":
-                                baseDate.setDate(baseDate.getDate() - baseDate.getDay());
+                                var dateDiff = baseDate.getDay();
+                                if(dateDiff == 0) { dateDiff = 7; }
+                                baseDate.setDate(baseDate.getDate() - dateDiff);
                                 return baseDate;
                             default:
                                 return null;
